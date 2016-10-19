@@ -1,0 +1,32 @@
+{
+  "name": "pipe-test-drive",
+  "version": "1.0.0",
+  "description": "Test CSV import application fro Pipedrive",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint knexfile.js",
+    "test": "npm run lint && mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vellotis/pipe-test-drive.git"
+  },
+  "author": "Kaarel Raspel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vellotis/pipe-test-drive/issues"
+  },
+  "homepage": "https://github.com/vellotis/pipe-test-drive#readme",
+  "devDependencies": {
+    "env-test": "^1.0.0",
+    "eslint": "^3.8.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.3.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1",
+    "should-sinon": "0.0.5",
+    "sinon": "^1.17.6",
+    "sinon-test": "git+https://github.com/sinonjs/sinon-test.git#524f0fa5764144a48ff48dead93a7b8d75243c6e"
+  }
+}
