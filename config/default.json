@@ -1,0 +1,13 @@
+{
+  "dbConfig": {
+    "client": "mysql2",
+    "connection": {
+      "charset": "utf8",
+      "timezone": "UTC",
+      "decimalNumbers": true
+    }
+  },
+  "logger": {
+    "level": "ERROR"
+  }
+}

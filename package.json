@@ -4,7 +4,7 @@
   "description": "Test CSV import application fro Pipedrive",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint knexfile.js",
+    "lint": "eslint knexfile.js migrations/*",
     "test": "npm run lint && mocha"
   },
   "repository": {
@@ -28,5 +28,9 @@
     "should-sinon": "0.0.5",
     "sinon": "^1.17.6",
     "sinon-test": "git+https://github.com/sinonjs/sinon-test.git#524f0fa5764144a48ff48dead93a7b8d75243c6e"
+  },
+  "dependencies": {
+    "knex": "^0.12.5",
+    "mysql2": "^1.1.1"
   }
 }

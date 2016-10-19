@@ -1,0 +1,13 @@
+{
+  "dbConfig": {
+    "connection": {
+      "host": "--FILL-HOST--",
+      "user": "--FILL-USERNAME--",
+      "password": "--FILL-PASSWORD--",
+      "database": "--FILL-DATABASE--"
+    }
+  },
+  "logger": {
+    "level": "DEBUG"
+  }
+}

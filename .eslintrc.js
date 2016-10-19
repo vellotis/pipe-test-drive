@@ -5,6 +5,8 @@ module.exports = {
   // Custom rules here
   'rules': {
     // allow paren-less arrow functions
-    'arrow-parens': 0
+    'arrow-parens': 0,
+    // require spaces around
+    'template-curly-spacing': [2, 'always']
   }
 }
