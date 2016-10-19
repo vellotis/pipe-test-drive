@@ -4,7 +4,7 @@
   "description": "Test CSV import application fro Pipedrive",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint knexfile.js migrations/*",
+    "lint": "eslint knexfile.js migrations/*  src/** test/**/*.js",
     "test": "npm run lint && mocha"
   },
   "repository": {
@@ -30,7 +30,19 @@
     "sinon-test": "git+https://github.com/sinonjs/sinon-test.git#524f0fa5764144a48ff48dead93a7b8d75243c6e"
   },
   "dependencies": {
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "bookshelf": "git+https://github.com/tgriesser/bookshelf.git#7d60bc7ac163a1c370b103447d9a0ea9e5e9b0f3",
+    "bookshelf-modelbase": "^2.10.1",
+    "config": "^1.21.0",
+    "csv-parse": "^1.1.7",
+    "express": "^4.14.0",
+    "formidable": "^1.0.17",
+    "fresh-require": "^1.0.3",
+    "jsonfile": "^2.4.0",
     "knex": "^0.12.5",
-    "mysql2": "^1.1.1"
+    "lodash": "^4.16.4",
+    "mysql2": "^1.1.1",
+    "stream-transform": "^0.1.1"
   }
 }
