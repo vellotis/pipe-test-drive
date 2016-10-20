@@ -12,31 +12,49 @@ const bookshelf         = require('bookshelf')(knex)
 bookshelf.plugin('registry')
 
 // Load models
-const models = Object.assign({},
+const models = {}
+
+module.exports = {
+  knex, bookshelf, models, initKnex
+}
+
+Object.assign({},
   require('../models/member')
 )
 
-function initKnex (dbConfig) {
+function initKnex (dbConfig, env) {
   const trytoDestroyKnexIfPresent = function () {
     return knex && knex.destroy()
   }
   const initKnex = function () {
-    module.exports.knex = knex = require('knex')(dbConfig)
+    return Knex(dbConfig)
   }
-  const checkConnection = function () {
-    return testConnection(knex)
+  const verifyConnection = function (_knex) {
+    return testConnection(_knex)
+    .catch(function (err) {
+      // Dispose connection if any
+      return _knex.destroy()
+      // And pass the exception
+      .thenThrow(err)
+    })
   }
-  const assignKnexToBookshelf = function () {
-    bookshelf.knex = knex
+  const assignKnexToBookshelf = function (_knex) {
+    // Start using it only if we are handling currently active environment
+    if (env === process.env.NODE_ENV) {
+      return trytoDestroyKnexIfPresent()
+      .then(function () {
+        // Assign new connection
+        module.exports.knex = bookshelf.knex = knex = _knex
+      })
+    } else {
+      // We do not need this connection. Close it.
+      return _knex.destroy()
+    }
   }
 
+  // Process
   return Promise.resolve()
-  .then(trytoDestroyKnexIfPresent)
   .then(initKnex)
-  .then(checkConnection)
+  .tap(verifyConnection)
   .then(assignKnexToBookshelf)
-}
-
-module.exports = {
-  knex, bookshelf, models, initKnex
 }

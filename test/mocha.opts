@@ -1,2 +1,3 @@
 --require env-test
---require ./src/test/common.coffee
+--require ./test/common.js
+--recursive

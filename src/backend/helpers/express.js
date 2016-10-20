@@ -1,8 +1,8 @@
 const Checkit     = require('checkit'),
       Promise     = require('bluebird'),
-      formidable  = require('./formidable'),
+      formidable  = require('formidable'),
       Parser      = require('csv-parse'),
-      {log}       = require('../../constants')
+      {log}       = require('../constants')
 
 function handleSafely (handle) {
   return function (req, res) {

@@ -24,6 +24,8 @@
     "eslint-plugin-promise": "^3.3.0",
     "eslint-plugin-standard": "^2.0.1",
     "mocha": "^3.1.2",
+    "portfinder": "^1.0.9",
+    "restify-clients": "^1.4.0",
     "should": "^11.1.1",
     "should-sinon": "0.0.5",
     "sinon": "^1.17.6",
@@ -34,6 +36,7 @@
     "body-parser": "^1.15.2",
     "bookshelf": "git+https://github.com/tgriesser/bookshelf.git#7d60bc7ac163a1c370b103447d9a0ea9e5e9b0f3",
     "bookshelf-modelbase": "^2.10.1",
+    "checkit": "^0.7.0",
     "config": "^1.21.0",
     "csv-parse": "^1.1.7",
     "express": "^4.14.0",
@@ -43,6 +46,7 @@
     "knex": "^0.12.5",
     "lodash": "^4.16.4",
     "mysql2": "^1.1.1",
-    "stream-transform": "^0.1.1"
+    "stream-transform": "^0.1.1",
+    "strong-params": "^0.7.0"
   }
 }

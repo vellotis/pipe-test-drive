@@ -1,7 +1,7 @@
 const express             = require('express'),
       router              = express.Router(),
       {handleSafely}      = require('../../helpers/express'),
-      membersController   = require('../controllers/members')
+      membersController   = require('../../controllers/members')
 
 router.get('/', function (req, res) {
   handleSafely(membersController.getDatabaseConfig)(req, res)
